@@ -1,0 +1,5 @@
+httpx==0.27.2
+fastapi==0.114.2
+aiokafka==0.11.0
+kafka-python-ng==2.2.2
+faust==1.10.4
