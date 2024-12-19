@@ -1,0 +1,1 @@
+kafka-topics.sh --create --replication-factor 1 --partitions 1 --topic weather.temperature --bootstrap-server localhost:9093
