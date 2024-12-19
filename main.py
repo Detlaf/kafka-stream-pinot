@@ -13,8 +13,12 @@ async def main():
         temp_readings = await get_weather_singapore(cfg.WEATHER_API_TEMPERATURE_URL)
         for reading in temp_readings:
             logging.info("Publishing weather readings")
-            encoded_reading = json.dumps(reading, indent=2).encode('utf-8')
-            await publish_one(broker_configuration=cfg.KAFKA_BROKER, topic_name="weather.temperature", message_payload=encoded_reading)
+            encoded_reading = json.dumps(reading, indent=2).encode("utf-8")
+            await publish_one(
+                broker_configuration=cfg.KAFKA_BROKER,
+                topic_name="weather.temperature",
+                message_payload=encoded_reading,
+            )
         await asyncio.sleep(5.0)
 
 

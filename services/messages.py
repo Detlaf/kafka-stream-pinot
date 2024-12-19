@@ -3,7 +3,9 @@ import logging
 from aiokafka import AIOKafkaProducer
 
 
-async def publish_one(broker_configuration: str, topic_name: str, message_payload: bytes):
+async def publish_one(
+    broker_configuration: str, topic_name: str, message_payload: bytes
+):
     producer = AIOKafkaProducer(bootstrap_servers=[broker_configuration])
     await producer.start()
     try:
